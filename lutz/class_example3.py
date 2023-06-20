@@ -1,6 +1,6 @@
-def main():
-    pass
-
-
-if __name__ == "__main__":
-    pass
+def processor(reader, converter, writer):
+    while True:
+        data = reader.read()
+        if not data: break
+        data = converter(data)
+        writer.write(data)

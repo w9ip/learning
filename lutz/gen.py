@@ -1,6 +1,8 @@
-def main():
-    pass
+def gen():
+    x = 0
+    x += 1
+    yield x
 
 
-if __name__ == "__main__":
-    pass
+g = gen()
+next(g)
