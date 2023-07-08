@@ -1,6 +1,5 @@
-def main():
-    pass
+a = int(input())
+b = int(input())
+c = int(input())
 
-
-if __name__ == "__main__":
-    pass
+print((-(b / (2 * a)), (4 * a * c - b ** 2) / (4 * a)))
