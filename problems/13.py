@@ -1,5 +1,5 @@
-a = int(input())
-b = int(input())
-c = int(input())
-
-print((-(b / (2 * a)), (4 * a * c - b ** 2) / (4 * a)))
+n = 10
+f1, f2, f3 = 1, 1, 1
+for i in range(n):
+    print(f1, end=' ')
+    f1, f2, f3 = f2, f3, f3 + f1 + f2

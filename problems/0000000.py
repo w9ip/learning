@@ -1,12 +1,15 @@
-def binary_search(num_array, left, right, x):
-    if left > right:
-        return -1
-    mid = 1 + (right - 1) // 2
-    if num_array[mid] == x:
-        return mid
-    elif num_array[mid] > x:
-        return binary_search(num_array, left, mid - 1, x)
-    return binary_search(num_array, mid + 1, right, x)
+from sys import stdin
 
-
-print(binary_search([1, 2, 3, 4, 5, 6], 4))
+gener = (e.rstrip() for e in stdin.readlines())
+next(gener)
+res = []
+while True:
+    try:
+        f = next(gener)
+        print(f)
+        if ('5' in f) or ('4' in f):
+            res.append(f)
+    except StopIteration:
+        print()
+        print(*res, sep='\n')
+        break
