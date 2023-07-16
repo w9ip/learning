@@ -6,12 +6,13 @@ class Squares:
 
     def __iter__(self):
         return self
-    
+
     def __next__(self):
         if self.value == self.stop - 1:
             raise StopIteration
         self.value += 1
         return self.value
+
 
 if __name__ == '__main__':
     for i in Squares(1, 5):
