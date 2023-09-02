@@ -1,17 +1,26 @@
-def is_valid(s):
+def is_valid(b):
     d = {
         '}': '{',
         ']': '[',
         ')': '(',
          }
     s = []
-    for i in s:
+    for i in b:
         if i in '[{(':
             s.append(i)
         else:
-            if d[i] == s[-1]:
+            if s and (d[i] == s[-1]):
                 s.pop()
-    print(s)
+            else:
+                return False
+    return True if not s else False
 
 
-is_valid('(){}{}[]')
+
+assert is_valid('(){}{}[]') == True
+is_valid('((){}{}[])')
+is_valid('({[]})')
+is_valid('({[]{}[{}]})')
+print(is_valid('()'))
+print(is_valid("()[]{}"))
+print(is_valid("]"))
