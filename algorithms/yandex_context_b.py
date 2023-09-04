@@ -1,18 +1,10 @@
 from bisect import insort
-
-N = int(input())
-
-rockets_logs = [
-    input().split() for e in range(N)
-]
-
+rockets_logs = [input().split() for e in range(int(input()))]
 sorted_logs = {}
-
 for day, hour, minute, id, status in rockets_logs:
-    lst = (int(day)*24*60+int(hour)*60+int(minute), status)
+    id = int(id)
     sorted_logs.setdefault(id, [])
-    insort(sorted_logs[id], lst)
-
+    insort(sorted_logs[id], (int(day)*24*60+int(hour)*60+int(minute), status))
 res_dir = {}
 for rocket, logs in sorted_logs.items():
     A, B, C, S = 0, 0, 0, 0
@@ -39,6 +31,5 @@ for rocket, logs in sorted_logs.items():
             flag = 0
             A, B, C, S = 0, 0, 0, 0
     res_dir.setdefault(rocket, rocket_sum_minute)
+print(*(res_dir[e] for e in sorted(res_dir.keys())))
 
-for i in sorted(res_dir.keys())[::-1]:
-    print(res_dir[i], end=' ')
