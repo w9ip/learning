@@ -1,0 +1,7 @@
+info0 = dict(name='Angela', age=23)
+info1 = dict(job='accountant')
+info0.update(info1)
+print(info0)
+info3 = dict(email='angela@gu.com')
+info0.update(info3)
+print(info0)
