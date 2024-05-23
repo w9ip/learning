@@ -4,7 +4,7 @@ m, p, n = int(input()), int(input()), int(input())
 # p: среднесуточное увеличение в %
 # n: количество дней для размножения
 
-d = (p/100)*m
 
 for i in range(n):
-  print(i + 1, (p/100)*m)
+    print(i + 1, m)
+    m = m + (p/100) * m

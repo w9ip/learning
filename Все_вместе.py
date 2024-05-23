@@ -1,0 +1,14 @@
+n = int(input())
+total = 0
+counter = 0
+multiple = 1
+f_digit = 0
+l_digit = n % 10
+while n != 0:
+    last_digit = n % 10
+    total += last_digit
+    counter += 1
+    multiple *= last_digit
+    f_digit = n
+    n = n // 10
+print(total, counter, multiple, total / counter, f_digit, f_digit + l_digit, sep='\n')
