@@ -1,0 +1,1 @@
+print([e for e in range(1, int(input()) + 1) if e % 2 == 0])
